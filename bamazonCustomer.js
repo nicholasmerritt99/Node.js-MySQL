@@ -1,5 +1,6 @@
-var prompt = require("prompt");
 var mysql = require("mysql");
+var prompt = require("prompt");
+
 
 var connection = mysql.createConnection({
     host : "localhost",
@@ -12,7 +13,7 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err){
     if(err){
-    console.log('Error connecting to Db');
+    console.log('Error connecting to Db' + err.message);
     return;
     }
     console.log('Connection established');
